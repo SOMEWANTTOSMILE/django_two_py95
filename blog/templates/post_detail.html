@@ -9,4 +9,8 @@
     <h3>{{ post.author.username }}</h3>
     <p>{{ post.text }}</p>
     </div>
+    {% if post.author == current_user %}
+    	<a href="{% url 'post_editor' post_id=post.id %}">edit post</a>
+    {% endif %} 
+    
 {% endblock %}
